@@ -1,6 +1,7 @@
 // this runs in Node.js on the server.
-import { createSSRApp, h } from "vue";
+import { App, createSSRApp, h } from "vue";
 // Vue's server-rendering API is exposed under `vue/server-renderer`.
+import { renderToString } from "vue/server-renderer";
 
 function createApp() {
   const app = createSSRApp({
@@ -8,8 +9,12 @@ function createApp() {
     template: `<button @click="count++">{{ count }}</button>`,
   });
 
-  renderToString(app).then((html) => {
-    res.send(`
+  return app;
+}
+
+function renderAppToHtml(app:  App<Element>) {
+  const renderedHtml = renderToString(app).then((html) => {
+    return `
     <!DOCTYPE html>
     <html>
       <head>
@@ -27,9 +32,9 @@ function createApp() {
         <div id="app">${html}</div>
       </body>
     </html>
-    `);
+    `;
   });
-  return app;
+  return renderedHtml;
 }
 
-export { createApp };
+export { createApp, renderAppToHtml };
