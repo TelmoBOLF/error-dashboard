@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shell Import Errors Dashboard</title>
+  <link rel="stylesheet" href="/dist/styles.css">
+</head>
+<body>
+  <!--vue-ssr-outlet-->
+  <script>window.__INITIAL_STATE__ = <!--initial-state--></script>
+  <script src="/dist/client-bundle.js"></script>
+</body>
+</html>
+
+// src/entry-client.js
+import { createApp } from './app';
+
+const { app, router, store } = createApp();
+
+if (window.__INITIAL_STATE__) {
+  store.replaceState(window.__INITIAL_STATE__);
+}
+
+router.isReady().then(() => {
+  app.mount('#app');
+});

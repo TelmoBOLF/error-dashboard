@@ -1,0 +1,42 @@
+// NOTE: logs from the lambda function
+// [SHELL-IMPORT-OFFERS] Invalid offers, JSON.stringify(invalidOffers) | offers
+// [SHELL-IMPORT-OFFERS] ${Object.values(offersByEmail).reduce((n, offers) => n + (offers && Array.isArray(offers) ? offers.length : 0),0)} total offers matched to accounts
+// [SHELL-IMPORT-OFFERS] ${filteredOffers.length} of ${offers.length} Offers Valid for ${email}
+// [SHELL-IMPORT-OFFERS] ${nOffersWithVolume} total offers with volume
+
+// NOTE: logs from the offers service createOffersForShell endpoint
+// [SHELL-IMPORT-OFFERS] Shell import: Unexpected value in property "StartDate" | offerDecoded
+// [SHELL-IMPORT-OFFERS] Shell import: Unexpected value in property "MaterialName" | offerDecoded
+// [SHELL-IMPORT-OFFERS] Shell import: Unexpected value in property "Location" | offerDecoded
+// [SHELL-IMPORT-OFFERS] Shell import: Unexpected value in property "MRCNumber" | offerDecoded
+// [SHELL-IMPORT-OFFERS] Shell import: Unexpected value in property "salesOrg" | offerDecoded
+// [SHELL-IMPORT-OFFERS] Shell import: Unexpected value in property "VATRate" | offerDecoded
+// [SHELL-IMPORT-OFFERS] Shell import: Unexpected value in property "availableVolume" | offerDecoded
+// [SHELL-IMPORT-OFFERS] Shell import: Unexpected value in property "SplitPercentage" | offerDecoded
+// [SHELL-IMPORT-OFFERS] Shell import: Unexpected value in property "PricePerUnit" | offerDecoded
+// [SHELL-IMPORT-OFFERS] offer filtered out because of invalid values. | offer 
+// [SHELL-IMPORT-OFFERS] Products for Mogas Bundle not set up correctly, not importing any offers. | { mogasBundleProduct, superE5Product, superE10Product, superS98Product }
+// [SHELL-IMPORT-OFFERS] Validation failed: Mogas bundle is skipped
+// [SHELL-IMPORT-OFFERS] Validation failed: Mogas bundle does not contain ${materialNameE5}` | offers
+// [SHELL-IMPORT-OFFERS] Validation failed: Mogas bundle does not contain ${materialNameE10}` | offers
+// [SHELL-IMPORT-OFFERS] Shell offer does not pass validations | offer
+// [SHELL-IMPORT-OFFERS] Fuel ${offer.MaterialName} not found in Platform, not importing ${offer.MRCNumber} | offer
+// [SHELL-IMPORT-OFFERS] Terminal '${offer.Location}' not found in Platform, not importing ${offer.MRCNumber} | offer
+// [SHELL-IMPORT-OFFERS] No volume available, not importing ${offer.MRCNumber} | offer
+// [SHELL-IMPORT-OFFERS] Available Volume exceeds minOrderQuantity. Not importing Mogas offer ${offer.MRCNumber} | offer
+// [SHELL-IMPORT-OFFERS] All dependencies satisfied, importing ${offersToSave.length} offers
+// [SHELL-IMPORT-OFFERS] Withdrawn ${(deleteResult as any).nModified} offers
+// [SHELL-IMPORT-OFFERS] Created ${createResult ? createResult.length : 0} offers
+// [SHELL-IMPORT-OFFERS] Discarded ${offersDecoded.length - offersToInsert.length - offersAlreadyInDB.length} offers
+// [SHELL-IMPORT-OFFERS] createOfferForShell | err
+
+// NOTE: logs from the offers service createOffersForShell endpoint (validateMogasBundleOffers function)
+// [SHELL-IMPORT-OFFERS] validateMogasBundleOffers: Invalid value set for SplitPercentage in offer | offers
+// [SHELL-IMPORT-OFFERS] validateMogasBundleOffers: Sum of SplitPercentages has to be 100 in Mogas bundle | offers
+// [SHELL-IMPORT-OFFERS] validateMogasBundleOffers: Terminals has to be equal across all line items in Mogas bundle | offers
+// [SHELL-IMPORT-OFFERS] validateMogasBundleOffers: StartDate has to be equal across all line items in Mogas bundle | offers
+// [SHELL-IMPORT-OFFERS] validateMogasBundleOffers: EndDate has to be equal across all line items in Mogas bundle | offers
+// [SHELL-IMPORT-OFFERS] validateMogasBundleOffers: Unexpected products in Mogas bundle | offers
+// [SHELL-IMPORT-OFFERS] validateMogasBundleOffers: Invalid offer in Mogas bundle sent by Shell | offers
+// [SHELL-IMPORT-OFFERS] validateMogasBundleOffers: Unexpected value for availableVolume for offer.MaterialName | offers
+// [SHELL-IMPORT-OFFERS] validateMogasBundleOffers: Unexpected volumes send by Shell | offers
