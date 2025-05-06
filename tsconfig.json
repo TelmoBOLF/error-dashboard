@@ -3,8 +3,8 @@
     "target": "es2020",
     "strict": true,
     "preserveConstEnums": true,
-    "noEmit": true,
-    "rootDir": ".",
+    "noEmit": false,
+    "rootDir": "./src",
     "outDir": "./dist",
     "sourceMap": false,
     "module":"commonjs",
@@ -14,5 +14,6 @@
     "forceConsistentCasingInFileNames": true, 
     "isolatedModules": true, 
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": ["src/**/*.ts", "src/**/*.js"],
 }

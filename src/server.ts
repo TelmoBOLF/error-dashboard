@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import * as Services from '.'
+import { createApp, renderAppToHtml } from './app'
 import path from 'path';
 const app = express();
 const port = 3000;
@@ -12,8 +12,8 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/app', async (req: Request, res: Response) => {
-  const vueApp = Services.app.createApp();
-  const renderedHtml = await Services.app.renderAppToHtml(vueApp);
+  const vueApp = createApp();
+  const renderedHtml = await renderAppToHtml(vueApp);
 
   res.send(renderedHtml);
 });

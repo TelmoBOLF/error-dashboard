@@ -1,11 +1,13 @@
 {
   "name": "cloudwatch-logs",
   "version": "1.0.0",
-  "main": "./dist/server.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --watch src --exec ts-node src/server.ts",
-    "start": "ts-node server.ts",
+    "dev": "nodemon --watch src --exec ts-node ./src/server.ts",
+    "dev:prod": "nodemon --watch src --exec npm run build && ./dist/server.js",
+    "start": "ts-node ./src/server.ts",
+    "start:prod": "node ./dist/server.ts",
     "build": "tsc",
     "watch": "tsc --outDir dist --watch"
   },
