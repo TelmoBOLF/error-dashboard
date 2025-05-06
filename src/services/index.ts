@@ -27,7 +27,7 @@ type TIncomingFailedOffers = {
   offersServiceOffers: ResultField[][]
 }
 
-const logsWithoutOffer: Record = {};
+const logsWithoutOffer: Record<string, string[]> = {};
 
 function writeToFile(data: any, file_name?: string) {
   const filePath =
