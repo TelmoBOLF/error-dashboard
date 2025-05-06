@@ -4,6 +4,7 @@
   "main": "./dist/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch src --exec ts-node src/server.ts",
     "start": "ts-node src/server.ts",
     "build": "tsc --outDir dist",
     "watch": "tsc --outDir dist --watch"
@@ -16,7 +17,8 @@
   "dependencies": {
     "@aws-sdk/client-cloudwatch-logs": "^3.797.0",
     "express": "^5.1.0",
-    "vue": "^3.3.4",
+    "nodemon": "^3.1.10",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.149",
