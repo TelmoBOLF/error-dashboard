@@ -18,6 +18,12 @@ app.get('/app', async (req: Request, res: Response) => {
   res.send(renderedHtml);
 });
 
+// Alternatively, you can specifically serve just the client.js file
+// Method 1: Direct route to the specific file
+app.get('/client.js', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client.js'));
+});
+
 
 
 app.listen(port, () => {

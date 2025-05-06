@@ -5,10 +5,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --watch src --exec ts-node ./src/server.ts",
-    "dev:prod": "nodemon --watch src --exec npm run build && ./dist/server.js",
+    "dev:prod": "nodemon",
     "start": "ts-node ./src/server.ts",
-    "start:prod": "node ./dist/server.ts",
-    "build": "tsc",
+    "start:prod": "node ./dist/server.js",
+    "build": "tsc && npm run copy-public",
+    "copy-public": "copyfiles index.html dist",
     "watch": "tsc --outDir dist --watch"
   },
   "keywords": [],
@@ -25,7 +26,10 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.149",
     "@types/express": "^5.0.1",
+    "copyfiles": "^2.4.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.8",
+    "webpack-cli": "^6.0.1"
   }
 }
