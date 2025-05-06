@@ -4,6 +4,8 @@
     "strict": true,
     "preserveConstEnums": true,
     "noEmit": true,
+    "rootDir": ".",
+    "outDir": "./dist",
     "sourceMap": false,
     "module":"commonjs",
     "moduleResolution":"node",
