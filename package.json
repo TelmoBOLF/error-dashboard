@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --watch src --exec ts-node ./src/server.ts",
     "dev:prod": "nodemon",
-    "start": "ts-node ./src/server.ts",
+    "start": "ts-node ./src/app.ts",
     "start:prod": "node ./dist/server.js",
     "build": "tsc && npm run copy-public",
     "copy-public": "copyfiles index.html dist",
@@ -20,8 +20,7 @@
   "dependencies": {
     "@aws-sdk/client-cloudwatch-logs": "^3.797.0",
     "express": "^5.1.0",
-    "nodemon": "^3.1.10",
-    "vue": "^3.5.13"
+    "nodemon": "^3.1.10"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.149",

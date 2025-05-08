@@ -29,9 +29,11 @@ type TIncomingFailedOffers = {
 
 const logsWithoutOffer: Record<string, string[]> = {};
 
-function writeToFile(data: any, file_name?: string) {
-  const filePath =
-    file_name ?? "./lambda-function-import-offers-for-shell.json";
+export function writeToFile(data: any, file_name?: string) {
+  console.log("Writing data to file...", file_name);
+  
+  const filePath = file_name ?
+    `./${file_name.split('/').at(-1)}` : `tada_${Math.random() * 100 + 1}`//"./lambda-function-import-offers-for-shell.json";
   // const filePath = file_name ?? "./offers-service-import-offers-for-shell.json";
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
   console.log(`Query results saved to ${filePath}`);
